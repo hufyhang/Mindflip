@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <title>Feifei HANG's Homepage</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> 
+        <meta name="description" content="Feifei HANG's Homepage" />
+        <meta name="keywords" content="Feifei HANG, feifei, hang, homepage, mindflip" />
+        <meta name="author" content="Feifei HANG" />
+        <link rel="shortcut icon" href="../favicon.ico"> 
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300,300italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script type="text/javascript" src="js/modernizr.custom.08464.js"></script>
+		<script id="pageTmpl" type="text/x-jquery-tmpl">
+			<div class="${theClass}" style="${theStyle}">
+				<div class="front">
+					<div class="outer">
+						<div class="content" style="${theContentStyleFront}">
+							<div class="inner">{{html theContentFront}}</div>
+						</div>
+					</div>
+				</div>
+				<div class="back">
+					<div class="outer">
+						<div class="content" style="${theContentStyleBack}">
+							<div class="inner">{{html theContentBack}}</div>
+						</div>
+					</div>
+				</div>
+			</div>			
+		</script>
+    </head>
+    <body>
+		
+		<header class="main-title">
+			<h1>Hi there! Welcome to the homepage of <strong>Feifei HANG</strong></h1>
+            <p>I am now a PhD candidate at the School of Computer Science in The University of Manchester</p>
+            <p>My current reseach interests include: <strong>SOA, Service Composition, Cloud Computing, Web 2.0, EUD, HCI</strong></p>
+			<p>Swipe or drag to flip the pages, click to open items </p>
+			<p><strong>Best viewed in a Webkit browser (Safari, Chrome)</strong></p>
+		</header>
+		
+		<div id="flip" class="container">
+		
+			<div class="f-page f-cover">
+				<div class="cover-elements">
+					<div class="logo">
+						Mindflip
+						<!-- <a class="f-ref" href="http://www.flickr.com/photos/nasahqphoto/">Images by NASA HQ Photo</a> -->
+					</div>
+					<h1>Spacy Flipping Pages with CSS3 &amp; jQuery <span>Powered by <a href="http://tympanus.net/codrops/2012/05/07/experimental-page-layout-inspired-by-flipboard/" target="_blank">PageFlip</a></span></h1>
+					<div class="f-cover-story"><span>Cover Story</span>Embracing the Era of Semantic-USDL</div>
+				</div>
+				<div class="f-cover-flip">&lt; Flip</div>
+			</div>
+
+			<!MINDFLIP_REPLACE_TAG!>
+			
+			<div class="f-page f-cover-back">
+				<div id="codrops-ad-wrapper">
+					
+				</div>
+			</div>
+		</div>
+	
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript">
+				
+			var $container 	= $( '#flip' ),
+				$pages		= $container.children().hide();
+			
+			Modernizr.load({
+				test: Modernizr.csstransforms3d && Modernizr.csstransitions,
+				yep : ['js/jquery.tmpl.min.js','js/jquery.history.js','js/core.string.js','js/jquery.touchSwipe-1.2.5.js','js/jquery.flips.js'],
+				nope: 'css/fallback.css',
+				callback : function( url, result, key ) {
+					
+					if( url === 'css/fallback.css' ) {
+						$pages.show();
+					}
+					else if( url === 'js/jquery.flips.js' ) {
+						$container.flips();
+					}
+			
+				}
+			});
+				
+		</script>
+    </body>
+</html>
