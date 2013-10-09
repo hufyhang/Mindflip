@@ -478,13 +478,13 @@
 								}
 								
 							}
-                            else {
-                                var ua = navigator.userAgent,
-                                    isIOS = (ua.match(/iPad/i)) ? true : false;
-                                if(isIOS) {
-                                    alert('');
-                                }
-                            }
+                            // else {
+                            //     var ua = navigator.userAgent,
+                            //         isIOS = (ua.match(/iPad/i)) ? true : false;
+                            //     if(isIOS) {
+                            //         alert('');
+                            //     }
+                            // }
 							
 							break;
 
@@ -580,12 +580,12 @@
 			this.$flipPages.find( '.box' ).on( 'click.flips', function( event ) {
 				
 				var $box 			= $(this),
-					$boxClose		= $( '<span class="box-close">close</span>' ),
+					$boxClose		= $( '<span class="box-close"><a href="#" style="color:white;">close</a></span>' ),
 					transitionProp	= {
 						speed			: 450,
 						timingfunction	: 'linear'
 					},
-					$overlay		= $( '<div class="overlay">close</div>' ).css( {
+					$overlay		= $( '<div class="overlay"><a href="#" style="color:white;">close</a></div>' ).css( {
 						'z-index'				: 9998,
 						'-webkit-transition' 	: 'opacity ' + transitionProp.speed + 'ms ' + transitionProp.timingfunction,
 						'-moz-transition' 		: 'opacity ' + transitionProp.speed + 'ms ' + transitionProp.timingfunction
